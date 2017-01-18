@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean name="customerRepository00"
+		class="com.plurlsight.repository.HibernateCustomerRepositoryImpl">
+	</bean>
+
+	<bean name="customerRepository01"
+		class="com.plurlsight.repository.HibernateCustomerRepositoryImpl">
+	</bean>
+
+	<bean name="customerRepository02"
+		class="com.plurlsight.repository.HibernateCustomerRepositoryImpl">
+	</bean>
+	
+	<bean name="customerService12" class="com.plurlsight.service.CustomerServiceImpl">
+		<constructor-arg index="0" ref="customerRepository00" />
+		<property name="customerRepositoryPrimary" ref="customerRepository01" />
+		<property name="customerRepositorySecondary" ref="customerRepository02" />
+	</bean>
+</beans>

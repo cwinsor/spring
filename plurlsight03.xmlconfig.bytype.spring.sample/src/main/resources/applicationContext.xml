@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- autowire byType -->
+	<!-- search within the class for all setX___(Xyz foo) Call this "classList" -->
+	<!-- search in applicationContext for xyz -->
+	<!-- now from the classList for the setX__ which is most specific to Xyz -->
+	<!-- autowire to that -->
+
+	<bean name="yyyyy"
+		class="com.plurlsight.repository.HibernateCustomerRepositoryImpl">
+	</bean>
+
+	<bean name="customerService122" class="com.plurlsight.service.CustomerServiceImpl"
+		autowire="byType">
+	</bean>
+
+
+
+</beans>

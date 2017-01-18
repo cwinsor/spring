@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- autowire byName -->
+	<!-- Autowire byName is applied to a class. It is methods in that class 
+		to which the autowire is applied. Those methods with the format "setBlah(Blah 
+		x) will receive a 'set' call using the (presumed only stance of) a Blah in 
+		the configuration file. One thing about autowire byType -->
+
+	<bean name="blaaaaah"
+		class="com.plurlsight.repository.HibernateCustomerRepositoryImpl">
+	</bean>
+
+	<bean name="blaaaaah2"
+		class="com.plurlsight.repository.HibernateCustomerRepositoryImpl">
+	</bean>
+	
+	<bean name="customerService122" class="com.plurlsight.service.CustomerServiceImpl"
+		autowire="byName">
+	</bean>
+
+	<!-- In the above example autowire is associated with customerService122 
+		which is an instance of CustomerServiceImpl. The configurator searches CustomerServiceImpl 
+		for any setXxxYyy(XxxYyy blah) and prepares to perform the set function. 
+		To do this it needs to find a single instance of an XxxYyy here in the applicationContext. 
+		It finds customerRepositoryyyyyy which is a HibernateCustomerRepositoryImpl 
+		which is derived from CustomerRepository. It is this instance that will be 
+		applied -->
+
+
+</beans>
